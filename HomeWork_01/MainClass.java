@@ -69,9 +69,4 @@ public class MainClass {
             System.out.println(a + " год високосный");
         }
     }
-
-    public static void gitWork () {
-        System.out.println("Git Worck");
-    }
-
 }
