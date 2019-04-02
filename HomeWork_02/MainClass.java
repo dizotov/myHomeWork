@@ -16,19 +16,21 @@ import java.util.Arrays;
 public class MainClass {
     public static void main(String[] args) {
 
-        int[] mass = {1,0,1,1,1,0,0,1,0,0};
-        int[] mass2 = new int[8];
-        int[] mass3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        int[] mass = {1,0,1,1,1,0,0,1,0,0}; //массив используемый в 1 задании
+        int[] mass2 = new int[8]; //массив используемый во 2 задании
+        int[] mass3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};// массив для 3 задачи
+        int[] mass4 = {1,1,2,1,3}; //массив используемый в 5 задании
 
         reverseBinArray(mass);
-        mass2 = addEveryThird(mass2);
-        mass3 = doubleIfLessSix(mass3);
+        addEveryThird(mass2);
+        doubleIfLessSix(mass3);
 
         //во время решения задачи №4 выяснилось что число количества строк (столбцов) в матрице должно быть не четным
         //иначе пересечение диагональных линий задействует более одной клетки
         matrixDi(13);
 
         minAndMax(mass3);
+        System.out.println("в массиве " + Arrays.toString(mass4) + " сумма левой и правой части массива равны = " + checkBalance(mass4));
 
     }
 
@@ -96,5 +98,23 @@ public class MainClass {
         System.out.println("Минимальное : " + min);
         System.out.println("Максимальное: " + max);
 
+    }
+
+    //метод возвращает true, если в массиве есть место, в котором сумма левой и правой части массива равны
+    public static boolean checkBalance(int[] m){
+        int left = 0;
+        int right = 0;
+
+        for (int i = 0; i < m.length; i++) {
+            left += m[i];
+            for (int j = i+1; j < m.length; j++) {
+                right += m[j];
+            }
+            if (left == right){
+                return true;
+            }
+            right = 0;
+        }
+        return false;
     }
 }
