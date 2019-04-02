@@ -12,14 +12,17 @@ import java.util.Arrays;
     6. ** Написать метод, в который передается не пустой одномерный целочисленный массив, метод должен вернуть true, если в массиве есть место, в котором сумма левой и правой части массива равны. Примеры: checkBalance([2, 2, 2, 1, 2, 2, || 10, 1]) → true, checkBalance([1, 1, 1, || 2, 1]) → true, граница показана символами ||, эти символы в массив не входят.
     7. **** Написать метод, которому на вход подается одномерный массив и число n (может быть положительным, или отрицательным), при этом метод должен сместить все элементымассива на n позиций. Для усложнения задачи нельзя пользоваться вспомогательными массивами.
 */
+
 public class MainClass {
     public static void main(String[] args) {
 
         int[] mass = {1,0,1,1,1,0,0,1,0,0};
         int[] mass2 = new int[8];
+        int[] mass3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
 
         reverseBinArray(mass);
         mass2 = addEveryThird(mass2);
+        mass3 = doubleIfLessSix(mass3);
 
     }
 
@@ -36,7 +39,21 @@ public class MainClass {
         for (int i = 0; i < m.length ; i++) {
             m[i] = i * 3;
         }
-        System.out.println("Произведено заполнение массива данными : " + Arrays.toString(m));
+        System.out.println("Произведено заполнение массива длиной "+ m.length + " данными : " + Arrays.toString(m));
+        return m;
+    }
+
+    public static int[] doubleIfLessSix (int[] m){
+        System.out.println();
+        System.out.println("Умножение элементов массива со значением ниже 6 на 2");
+        System.out.println("Исходный массив         : "+ Arrays.toString(m));
+
+        for (int i = 0; i <m.length ; i++) {
+            if (m[i] < 6) {
+                m[i] = m[i] * 2;
+            }
+        }
+        System.out.println("Результат работы метода : " + Arrays.toString(m));
         return m;
     }
 }
