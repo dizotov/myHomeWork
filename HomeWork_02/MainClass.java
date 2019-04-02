@@ -48,6 +48,7 @@ public class MainClass {
 
     }
 
+    //метод используемый в задании №1. Заменяет 1 на 0, 0 на 1
     public static void reverseBinArray(int[] m) {
         System.out.println("Исходный Массив  : " + Arrays.toString(m));
         for (int i = 0; i < m.length ; i++) {
@@ -57,6 +58,7 @@ public class MainClass {
 
     }
 
+    //метод используемый в задании №2. Заполняет массив значениями 0 3 6 9 12 15 18 21 ...
     public static int[] addEveryThird (int[] m) {
         for (int i = 0; i < m.length ; i++) {
             m[i] = i * 3;
@@ -65,6 +67,7 @@ public class MainClass {
         return m;
     }
 
+    //метод используемый в задании №3. Умножение элементов массива со значением ниже 6 на 2
     public static int[] doubleIfLessSix (int[] m){
         System.out.println("Умножение элементов массива со значением ниже 6 на 2");
         System.out.println("Исходный массив         : "+ Arrays.toString(m));
@@ -78,9 +81,8 @@ public class MainClass {
         return m;
     }
 
-    //Метод используемый в задании №4
+    //метод используемый в задании №4. Строит матрицу и заполняет диагонали 1
     public static void matrixDi (int x) {
-        //создаем массив с заданным размером
         int[][] mx = new int[x][x];
         //используем один цикл для заполнения
         for (int i = 0; i < x; i++) {
@@ -97,7 +99,7 @@ public class MainClass {
         }
     }
 
-    //Метод для задания №5. Находит минимальное и максимальное число массива
+    //метод для задания №5. Находит минимальное и максимальное число массива
     public static void minAndMax (int[] m) {
         int min = m[0];
         int max = m[0];
@@ -111,7 +113,7 @@ public class MainClass {
 
     }
 
-    //метод возвращает true, если в массиве есть место, в котором сумма левой и правой части массива равны
+    //метод используемый в задании №6. Возвращает true, если в массиве есть место, в котором сумма левой и правой части массива равны
     public static boolean checkBalance(int[] m){
         int left = 0;
         int right = 0;
