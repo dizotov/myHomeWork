@@ -16,7 +16,10 @@ public class MainClass {
     public static void main(String[] args) {
 
         int[] mass = {1,0,1,1,1,0,0,1,0,0};
+        int[] mass2 = new int[8];
+
         reverseBinArray(mass);
+        mass2 = addEveryThird(mass2);
 
     }
 
@@ -27,5 +30,13 @@ public class MainClass {
         }
         System.out.println("Измененный Массив: " + Arrays.toString(m));
 
+    }
+
+    public static int[] addEveryThird (int[] m) {
+        for (int i = 0; i < m.length ; i++) {
+            m[i] = i * 3;
+        }
+        System.out.println("Произведено заполнение массива данными : " + Arrays.toString(m));
+        return m;
     }
 }
