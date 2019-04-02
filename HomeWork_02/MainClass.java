@@ -21,15 +21,29 @@ public class MainClass {
         int[] mass3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};// массив для 3 задачи
         int[] mass4 = {1,1,2,1,3}; //массив используемый в 5 задании
 
+        System.out.println("Задание №1:");
         reverseBinArray(mass);
+
+        System.out.println();
+        System.out.println("Задание №2:");
         addEveryThird(mass2);
+
+        System.out.println();
+        System.out.println("Задание №3:");
         doubleIfLessSix(mass3);
 
-        //во время решения задачи №4 выяснилось что число количества строк (столбцов) в матрице должно быть не четным
+        System.out.println();
+        System.out.println("Задание №4:");
+        //во время решения задачи №4 выяснилось, что число количества строк (столбцов) в матрице должно быть не четным
         //иначе пересечение диагональных линий задействует более одной клетки
         matrixDi(13);
 
+        System.out.println();
+        System.out.println("Задание №5:");
         minAndMax(mass3);
+
+        System.out.println();
+        System.out.println("Задание №6:");
         System.out.println("в массиве " + Arrays.toString(mass4) + " сумма левой и правой части массива равны = " + checkBalance(mass4));
 
     }
@@ -52,7 +66,6 @@ public class MainClass {
     }
 
     public static int[] doubleIfLessSix (int[] m){
-        System.out.println();
         System.out.println("Умножение элементов массива со значением ниже 6 на 2");
         System.out.println("Исходный массив         : "+ Arrays.toString(m));
 
@@ -75,8 +88,7 @@ public class MainClass {
             mx[i][(x-1)-i] = 1;
         }
         //выводим результат в консоль
-        System.out.println();
-        System.out.println("Двумерный массив размером " + x + "x" + x + "диагональные элементы заполнены единицами:");
+        System.out.println("Двумерный массив размером " + x + "x" + x + " диагональные элементы заполнены единицами:");
         for (int i = 0; i < x; i++) {
             for (int j = 0; j < x ; j++) {
                 System.out.print(mx[i][j]);
@@ -89,7 +101,6 @@ public class MainClass {
     public static void minAndMax (int[] m) {
         int min = m[0];
         int max = m[0];
-        System.out.println();
         System.out.println("Массив : " + Arrays.toString(m));
         for (int i = 1; i < m.length; i++) {
             if (m[i] > max) max = m[i];
