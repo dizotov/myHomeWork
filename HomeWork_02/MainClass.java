@@ -24,6 +24,10 @@ public class MainClass {
         mass2 = addEveryThird(mass2);
         mass3 = doubleIfLessSix(mass3);
 
+        //во время решения задачи №4 выяснилось что число количества строк (столбцов) в матрице должно быть не четным
+        //иначе пересечение диагональных линий задействует более одной клетки
+        matrixDi(13);
+
     }
 
     public static void reverseBinArray(int[] m) {
@@ -55,5 +59,25 @@ public class MainClass {
         }
         System.out.println("Результат работы метода : " + Arrays.toString(m));
         return m;
+    }
+
+    //Метод используемый в задании №4
+    public static void matrixDi (int x) {
+        //создаем массив с заданным размером
+        int[][] mx = new int[x][x];
+        //используем один цикл для заполнения
+        for (int i = 0, j = 0; i < x; i++ , j++) {
+            mx[i][j] = 1;
+            mx[i][(x-1)-i] = 1;
+        }
+        //выводим результат в консоль
+        System.out.println();
+        System.out.println("Двумерный массив размером " + x + "x" + x + "диагональные элементы заполнены единицами:");
+        for (int i = 0; i < x; i++) {
+            for (int j = 0; j < x ; j++) {
+                System.out.print(mx[i][j]);
+            }
+            System.out.println();
+        }
     }
 }
