@@ -28,6 +28,8 @@ public class MainClass {
         //иначе пересечение диагональных линий задействует более одной клетки
         matrixDi(13);
 
+        minAndMax(mass3);
+
     }
 
     public static void reverseBinArray(int[] m) {
@@ -79,5 +81,20 @@ public class MainClass {
             }
             System.out.println();
         }
+    }
+
+    //Метод для задания №5. Находит минимальное и максимальное число массива
+    public static void minAndMax (int[] m) {
+        int min = m[0];
+        int max = m[0];
+        System.out.println();
+        System.out.println("Массив : " + Arrays.toString(m));
+        for (int i = 1; i < m.length; i++) {
+            if (m[i] > max) max = m[i];
+            if (m[i] < min) min = m[i];
+        }
+        System.out.println("Минимальное : " + min);
+        System.out.println("Максимальное: " + max);
+
     }
 }
