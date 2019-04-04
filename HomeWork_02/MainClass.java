@@ -16,10 +16,11 @@ import java.util.Arrays;
 public class MainClass {
     public static void main(String[] args) {
 
-        int[] mass = {1,0,1,1,1,0,0,1,0,0}; //массив используемый в 1 задании
+        int[] mass = {1, 0, 1, 1, 1, 0, 0, 1, 0, 0}; //массив используемый в 1 задании
         int[] mass2 = new int[8]; //массив используемый во 2 задании
         int[] mass3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};// массив для 3 задачи
-        int[] mass4 = {1,1,2,1,3}; //массив используемый в 5 задании
+        int[] mass4 = {1, 1, 2, 1, 3}; //массив используемый в 5 задании
+
 
         System.out.println("Задание №1:");
         reverseBinArray(mass);
@@ -46,7 +47,14 @@ public class MainClass {
         System.out.println("Задание №6:");
         System.out.println("в массиве " + Arrays.toString(mass4) + " сумма левой и правой части массива равны = " + checkBalance(mass4));
 
+        String s = "hello world";
+
     }
+
+
+    static void test2 ()
+
+
 
     //метод используемый в задании №1. Заменяет 1 на 0, 0 на 1
     public static void reverseBinArray(int[] m) {
