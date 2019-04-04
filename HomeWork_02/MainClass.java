@@ -51,11 +51,6 @@ public class MainClass {
 
     }
 
-
-    static void test2 ()
-
-
-
     //метод используемый в задании №1. Заменяет 1 на 0, 0 на 1
     public static void reverseBinArray(int[] m) {
         System.out.println("Исходный Массив  : " + Arrays.toString(m));
