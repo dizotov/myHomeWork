@@ -24,12 +24,70 @@ package HomeWork_03;
         Используем только маленькие буквы
  */
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class DZ_03 {
     public static void main(String[] args) {
 
 
+        guessNumber();
 
     }
 
+    static void guessNumber (){
+        Random random = new Random();
+        Scanner sc = new Scanner(System.in);
+        boolean playGame = true;
+        boolean winGame = false;
+        int secretNumb;
 
+        System.out.println("* ИГРА: УГАДАЙ ЧИСЛО *");
+        do {
+            secretNumb = random.nextInt(10);
+            System.out.println("Угадайте число от 0 до 10");
+
+            for (int i = 0; i < 3; i++) {
+                if(compareNubers(sc.nextInt(),secretNumb)) {
+                    winGame = true;
+                    break;
+                }
+            }
+            if (!winGame) {
+                System.out.println("Вы не угадали. Загаданное число : " + secretNumb);
+            }
+            playGame = playAgainQuestion();
+        } while (playGame);
+    }
+
+    static boolean compareNubers (int playerNumber, int secretNumber){
+        if (playerNumber == secretNumber) {
+            System.out.println("Вы угадали загаданное число : " + secretNumber);
+            return true;
+        }
+        if (playerNumber > secretNumber) {
+            System.out.println("Указанное вами число выше загаданного");
+        }
+        if (playerNumber < secretNumber) {
+            System.out.println("Указанное вами число ниже загаданного");
+        }
+        return false;
+    }
+
+    static boolean playAgainQuestion (){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Повторить игру еще раз? 1 – да / 0 – нет");
+        switch (sc.nextInt()) {
+            case 1:
+                System.out.println("!НОВАЯ ИГРА!!");
+                return true;
+            case 0:
+                System.out.println("СПАСИБО ЗА ИГРУ :)");
+                return false;
+            default:
+                System.out.println("Вы ввели неизвестный идентификатор");
+                playAgainQuestion();
+        }
+        return false;
+    }
 }
