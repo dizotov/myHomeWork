@@ -33,6 +33,7 @@ public class DZ_03 {
         selectGame();
     }
 
+    //Выбор игры
     static void selectGame(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Выберите игру:");
@@ -55,6 +56,7 @@ public class DZ_03 {
         }
     }
 
+    //Игра 1 : Угадай Число
     static void guessNumberGame (){
         Random random = new Random();
         Scanner sc = new Scanner(System.in);
@@ -80,6 +82,7 @@ public class DZ_03 {
         };
     }
 
+    //метод сравнивает числа
     static boolean compareNubers (int playerNumber, int secretNumber){
         boolean compare = false;
         if (playerNumber == secretNumber) {
@@ -95,6 +98,7 @@ public class DZ_03 {
         return compare;
     }
 
+    //Игра 2: Угадай слово
     static void guesVegetableGame(){
         System.out.println("* ИГРА: УГАДАЙ СЛОВО *");
         boolean gameWin = false;
@@ -115,6 +119,8 @@ public class DZ_03 {
     }
 
     //на вход передаются параметры: строка которую сравниваем, строка с которой сравниваем, длинна ширмы из хэштегов
+    //возвращает true в случае если слово угаданно
+    //если слово не угаданно возвращает false
     static boolean compareString (String userStr, String answerStr, int secretLength ) {
         boolean compare = false;
         String display = "";
@@ -138,6 +144,7 @@ public class DZ_03 {
         return compare;
     }
 
+    //метод возвращает случайно загадонное слово из массива
     static String randomVege () {
         String[] words = {"apple", "orange", "lemon", "banana", "apricot", "avocado",
                 "broccoli", "carrot", "cherry", "garlic", "grape", "melon", "leak", "kiwi",
@@ -146,9 +153,9 @@ public class DZ_03 {
         Random random = new Random();
         System.out.println("Компьютер загадал новое слово.");
         return words[random.nextInt(words.length)];
-
     }
 
+    //выбор действия по окончанию игры, возвращает true в случае если пользователь хочет сыграть снова
     static boolean playAgainQuestion (){
         boolean playAgain = false;
         Scanner sc = new Scanner(System.in);
