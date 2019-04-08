@@ -150,20 +150,23 @@ public class DZ_03 {
     }
 
     static boolean playAgainQuestion (){
+        boolean playAgain = false;
         Scanner sc = new Scanner(System.in);
         System.out.println("Повторить игру еще раз? 1 – да / 0 – нет");
         switch (sc.nextInt()) {
             case 1:
                 System.out.println("!НОВАЯ ИГРА!!");
-                return true;
+                playAgain = true;
+                break;
             case 0:
                 System.out.println("СПАСИБО ЗА ИГРУ :)");
                 System.out.println("");
-                return false;
+                playAgain = false;
+                break;
             default:
                 System.out.println("Вы ввели неизвестный идентификатор");
                 playAgainQuestion();
         }
-        return false;
+        return playAgain;
     }
 }
