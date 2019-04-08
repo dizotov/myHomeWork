@@ -114,7 +114,7 @@ public class DZ_03 {
         };
     }
 
-    //на вхо передаются параметры слово, слово с которым сравниваем, длинна ширмы из хэштегов
+    //на вход передаются параметры: строка которую сравниваем, строка с которой сравниваем, длинна ширмы из хэштегов
     static boolean compareString (String userStr, String answerStr, int secretLength ) {
         boolean compare = false;
         String display = "";
